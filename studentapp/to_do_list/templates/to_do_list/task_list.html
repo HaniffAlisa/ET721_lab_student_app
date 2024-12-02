@@ -1,7 +1,10 @@
+<!-- to_do_list/templates/to_do_list/task_list.html -->
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>To-Do List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <h1>To-Do List</h1>
@@ -10,5 +13,6 @@
             <li>{{ task.title }} - {{ task.due_date }}</li>
         {% endfor %}
     </ul>
+    <a href="{% url 'task_create' %}">Create a new task</a>
 </body>
 </html>
