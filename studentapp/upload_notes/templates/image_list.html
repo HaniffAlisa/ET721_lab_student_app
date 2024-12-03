@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Note Images</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Note Images</h1>
+    <ul>
+        {% for image in images %}
+            <li>{{ image.title }} - <img src="{{ image.image.url }}" alt="{{ image.title }}"></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'image_upload' %}">Upload a new image</a>
+</body>
+</html>

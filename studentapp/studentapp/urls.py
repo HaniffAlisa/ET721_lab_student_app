@@ -17,10 +17,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from to_do_list import views as to_do_list_views
+from django.views.generic import RedirectView  # Add this line
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tasks/', include('to_do_list.urls')),
-    path('', to_do_list_views.task_list, name='home'),  # Add this line
+    path('blog/', include('blog.urls')),
+    path('', RedirectView.as_view(url='/tasks/', permanent=True)),  # This line is correct
 ]
