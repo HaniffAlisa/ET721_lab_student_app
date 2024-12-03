@@ -2,6 +2,9 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.task_list, name='task_list'),
-    path('create/', views.task_create, name='task_create'),
+    path('', views.index, name='index'),
+    path('add/', views.addTodoItem, name='addTodoItem'),
+    path('complete/<int:todo_id>/', views.completedTodo, name='completedTodo'),
+    path('delete-completed/', views.deletecompleted, name='deletecompleted'),
+    path('delete-all/', views.deleteAll, name='deleteAll'),
 ]

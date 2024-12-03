@@ -1,7 +1,15 @@
 from django import forms
-from .models import Task
 
-class TaskForm(forms.ModelForm):
-    class Meta:
-        model = Task
-        fields = ['title', 'description', 'category', 'due_date', 'completed']
+class TaskForm(forms.Form):
+    title = forms.CharField(
+        max_length=100,
+        widget=forms.TextInput(
+            attrs={
+                'id': 'task',
+                'class': 'todo_text',
+                'placeholder': 'type your task...',
+                'aria-label': 'Todo',
+                'aria-describedby': 'add-btn'
+            }
+        )
+    )
