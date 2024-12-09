@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "to_do_list",
     "blog",
     "upload_notes",
+    "studentapp",
 ]
 
 MIDDLEWARE = [
