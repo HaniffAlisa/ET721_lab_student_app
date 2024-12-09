@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome to the Student App</h1>
+    <ul>
+        <li><a href="{% url 'to_do_list:index' %}">To-Do List</a></li>
+        <li><a href="{% url 'blog:index' %}">Blog</a></li>
+        <li><a href="{% url 'upload_notes:index' %}">Upload Notes</a></li>
+    </ul>
+</body>
+</html>
